@@ -1,54 +1,340 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7ED5383E-AE05-4143-AE8A-AFC23940F3E4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp1</RootNamespace>
-    <AssemblyName>ConsoleApp1</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Desafio.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+
+    public class desafios
+    {
+        public desafios()
+        {
+
+        }
+
+        public void Desafio001()
+        {
+            int num;
+            Console.WriteLine("Digite um numero: ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Dobro é {num * 2}");
+            Console.WriteLine($"Triplo é {num * 3}");
+            Console.WriteLine($"Raiz quadrada é {Math.Sqrt(num)}");
+            Console.ReadKey();
+        }
+
+        public void Desafio002()
+        {
+            double p1, p2;
+            Console.WriteLine("Coloque a nota da primeira prova: ");
+            p1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Coloque a nota da segunda prova: ");
+            p2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine($"A média é {(p1 + p2) / 2}");
+
+        }
+
+        public void Desafio003()
+        {
+            double metro;
+            metro = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine($"Cm = {metro * 100} cm");
+            Console.WriteLine($"mm = {metro * 1000} mm");
+
+        }
+
+        public void Desafio004()
+        {
+            int X = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine($"{X} x {i} = {X * i}");
+            }
+        }
+
+        public void Desafio005()
+        {
+            double carteira = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+
+            Console.WriteLine($"O valor em doláres é U$ {carteira * 5}");
+        }
+
+        public void Desafio006()
+        {
+            double largura = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            double altura = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+
+            double area = Math.Round(largura * altura, 2);
+            double tinta = area / 2;
+
+            Console.WriteLine($"A área do espaço é de {area}m e serão necessários {tinta} litros de tinta");
+
+        }
+
+        public void Desafio007()
+        {
+            double desconto = 0.15;
+            Console.WriteLine("Qual o preço do produto?");
+            double valor = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            double precofinal = Math.Round(valor - desconto * valor, 2);
+
+            Console.WriteLine($"O novo preço do produto é {precofinal}");
+        }
+
+        public void Desafio008()
+        {
+            double aumento = 0.15;
+            Console.WriteLine("Insira o salario atual do funcionário");
+            double salario = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            double reajuste = Math.Round(salario + (salario * aumento), 2);
+
+            Console.WriteLine($"O novo salário do funcionário é {reajuste}");
+
+        }
+
+        public void Desafio009()
+        {
+            Console.WriteLine("Digite a temperatura em Celsius");
+            int celsius = Convert.ToInt32(Console.ReadLine());
+            double cpf = (celsius * 9 / 5) + 32;
+
+            Console.WriteLine($"A temperatura de {celsius} graus celsius equivale a {cpf} Fahrenheit");
+
+        }
+
+        public void Desafio010()
+        {
+            Console.WriteLine("Quantos quilometros foram percorridos? ");
+            double km = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            Console.WriteLine("Em quantos dias? ");
+            double dias = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            double preco = dias * 60 + km * 0.15;
+
+            Console.WriteLine($"O preço total do aluguel do carro é de {preco} reais");
+
+        }
+
+        public void Desafio016()
+        {
+            Console.WriteLine("Entre com um número ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            if (num / 2 == 0)
+            {
+                Console.WriteLine($"O número {num} é par");
+            }
+            else
+            {
+                Console.WriteLine($"O númeor {num} é ímpar");
+            }
+        }
+
+        public void Desafio017()
+        {
+            Console.WriteLine("Qual seu nome completo?");
+            string nome = Console.ReadLine();
+            string maiusc = nome.ToUpper();
+            string minusc = nome.ToLower();
+            Console.WriteLine($"O nome é {nome}, {maiusc}, {minusc}");
+
+        }
+
+
+        public void Desafio018()
+        {
+            string value;
+            do
+            {
+                int res;
+                Console.WriteLine("Entre com o primeiro número: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Entre com o segundo número");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(" * + - /");
+                string symbol = Console.ReadLine();
+
+                switch (symbol)
+                {
+                    case "*":
+                        res = num1 * num2;
+                        Console.WriteLine("Multiplicação: " + res);
+                        break;
+                    case "+":
+                        res = num1 + num2;
+                        Console.WriteLine("Adição: " + res);
+                        break;
+                    case "-":
+                        res = num1 - num2;
+                        Console.WriteLine("Subtração: " + res);
+                        break;
+                    case "/":
+                        res = num1 / num2;
+                        Console.WriteLine("Divisão: " + res);
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input");
+                        break;
+                }
+                Console.WriteLine("Quer continuar?(y/n)");
+                value = Console.ReadLine();
+            }
+            while (value == "y" || value == "Y");
+            Console.ReadKey();
+        }
+
+        public void Desafio019()
+        {
+            Console.WriteLine("Idade: ");
+            int idade = Convert.ToInt32(Console.ReadLine());
+            if (idade < 18)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("SEM PERMISSÃO");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("PERMITIDO");
+            }
+            Console.ReadKey();
+        }
+
+        public void Desafio020()
+        {
+            Console.WriteLine("Insira uma frase: ");
+            string frase = Console.ReadLine();
+            string f = frase.ToLower();
+            string novafrase = f.Replace("a", "&");
+            Console.WriteLine(novafrase);
+            Console.ReadKey();
+            
+        }
+
+        public void Desafio021()
+        {
+            Console.WriteLine("Salário: ");
+            double salario = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            if (salario < 1700)
+            {
+                double novosalario = salario + 300;
+                Console.WriteLine($"O novo salário é {novosalario}");
+
+            }
+            else
+            {
+                double novosalario = salario + 200;
+                Console.WriteLine($"O novo salário é {novosalario}");
+            }
+            Console.ReadKey();
+        }
+
+        public void Desafio022()
+        {
+            Console.WriteLine("Peso: ");
+            int peso = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Altura em m: ");
+            double altura = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+
+            double imc = (peso / (altura * altura)) * 10000;
+
+            Console.WriteLine("IMC: " + imc);
+            Console.ReadKey();
+        }
+
+        public void Desafio023()
+        {
+            Console.WriteLine("Entre com as medidas: ");
+            string medidas = Console.ReadLine();
+            string[] res = medidas.Split(' ');
+            int volume = Convert.ToInt32(res[0]) * Convert.ToInt32(res[1]) * Convert.ToInt32(res[2]);               Console.WriteLine("Result: " + volume);
+
+             Console.ReadKey();
+           
+        }
+
+        public void Desafio024()
+        {
+            Console.WriteLine("Insira a altura do cilindro: ");
+            int altura = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Insira o raio: ");
+            int raio = Convert.ToInt32(Console.ReadLine());
+            double volume = Math.Round(3.1415 * (Math.Pow(raio, 2)) * altura, 2);
+            Console.WriteLine("O volume do cilindro é " + volume);
+            Console.ReadKey();
+        }
+        public void Desafio025()
+        {
+            Console.WriteLine("Entre com um número: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Entre com outro número");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            double res = Math.Pow(num2- num1, 2);
+            Console.WriteLine(res);
+            Console.ReadKey();
+        }
+
+        public void Desafio026()
+        {
+            double pi = 3.1415;
+            Console.WriteLine("Raio: ");
+            double raio = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+            double volume = 4 / 3 * pi * raio * raio;
+            Console.WriteLine("O volume é: " + volume);
+            Console.ReadKey();
+        }
+
+        public void Desafio027()
+        {
+            Console.WriteLine("Entre com um número: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Entre com outro número: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            double soma = num1 + num2;
+            double sub = num1 - num2;
+            double mult = num1*num2;
+            double div =  num1 / num2;
+            Console.WriteLine($"Soma = {soma}, Subtração = {sub}, Multiplicação = {mult}, Divisão = {div}");
+            Console.ReadKey();
+        }
+
+        public void Desafio028()
+        {
+
+        }
+
+        public void Desafio029()
+        {
+            Console.WriteLine("Qual o valor da prestação? ");
+            double prest = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Qual os juros? Em decimal ");
+            double juros = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Tempo: ");
+            double tempo = Convert.ToDouble(Console.ReadLine());
+           
+            double J = prest * juros * tempo;
+            
+            Console.WriteLine("Juros: " + J);
+            Console.ReadKey();
+
+        }
+
+        public void Desafio030()
+        {
+            Console.WriteLine("Insira cinco números: ");
+            string nums = Console.ReadLine();
+            string[] num = nums.Split(',');
+            num.Reverse();
+            string a = string.Join(",", num);
+            Console.WriteLine($"O menor e maior números são respectivamente: {a[0]} e {a[4]}");
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
